@@ -83,7 +83,7 @@
 
                 @if (session('alert'))
                 @if (session('alert') == 'succesful')
-                    <x-alert alert="succesful" message="Account is succesfuly created.." />
+                    <x-alert alert="succesful" message="Succesfuly send email message.." />
                 @elseif(session('alert') == 'not_succesful')
                     <x-alert alert="not_succesful" message="Incorrect data.." />
                 @else
@@ -104,12 +104,13 @@
                             <i class="fas fa-at"></i>
                         </div>
                     </div>
-                    @error('email')
-                        <div class="mt-2 text-red-300 text-sm flex items-center">
+                    
+                        <div class="h-1 text-red-300 text-sm flex items-center p-3">
+                        @error('email')
                             <i class="fas fa-exclamation-circle mr-2"></i>
                             {{ $message }}
+                        @enderror
                         </div>
-                    @enderror
                 </div>
 
                 <!-- Subject Input -->
@@ -125,12 +126,13 @@
                             <i class="fas fa-edit"></i>
                         </div>
                     </div>
-                    @error('subject')
-                        <div class="mt-2 text-red-300 text-sm flex items-center">
+
+                    <div class="h-1 text-red-300 text-sm flex items-center p-3">
+                        @error('subject')
                             <i class="fas fa-exclamation-circle mr-2"></i>
                             {{ $message }}
+                        @enderror
                         </div>
-                    @enderror
                 </div>
 
                 <!-- Number of Times Input -->
@@ -146,12 +148,13 @@
                             <i class="fas fa-hashtag"></i>
                         </div>
                     </div>
-                    @error('send_times')
-                        <div class="mt-2 text-red-300 text-sm flex items-center">
+
+                     <div class="h-1 text-red-300 text-sm flex items-center p-3">
+                        @error('send_times')
                             <i class="fas fa-exclamation-circle mr-2"></i>
                             {{ $message }}
+                        @enderror
                         </div>
-                    @enderror
                 </div>
 
                 <!-- Message Textarea -->
@@ -167,12 +170,13 @@
                             <i class="fas fa-pen-fancy"></i>
                         </div>
                     </div>
-                    @error('message')
-                        <div class="mt-2 text-red-300 text-sm flex items-center">
+
+                     <div class="h-1 text-red-300 text-sm flex items-center p-3">
+                        @error('message')
                             <i class="fas fa-exclamation-circle mr-2"></i>
                             {{ $message }}
+                        @enderror
                         </div>
-                    @enderror
                 </div>
 
                 <!-- Send Button -->
